@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %} {{user.name }} User home {% endblock %}
+{% block content %}
+<link rel="stylesheet" href="index.css">
+{% for u in user %}
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col"><h5 style="color:blue">Foydalanuvchi</h5></th>
+            <th scope="col"><h5 style="color:blue">Kirgan sanasi</h5></th>
+            <th scope="col"><h5 style="color:blue">Qo'shilgan sanasi</h5></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td style="color:red">{{u.username}}</td>
+            <td style="color:red">{{u.date_joined}}</td>
+            <td style="color:red">{{u.last_login}}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+{% endfor %}  
+        
+
+{% endblock %}
